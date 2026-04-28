@@ -1,0 +1,18 @@
+Nama: ACHMD RAFFY NADJIB
+NIM: 23424047
+
+
+1. Jelaskan perbedaan persebaran nilai keabuan antara ketiga citra!
+
+Perbedaan Persebaran Nilai Keabuan:
+
+Citra Asli: Distribusi nilai keabuan sangat bergantung pada kondisi pencahayaan gambar awal. Histogramnya bisa menumpuk di area gelap, terang, atau tersebar merata.
+
+Citra Negatif: Histogram citra ini adalah bentuk cerminan (inversi) dari histogram citra asli. Jika piksel citra asli dominan di area gelap (kiri), maka piksel pada citra negatif akan bergeser mendominasi area terang (kanan).
+
+Citra Logaritmik: Histogramnya akan tampak melebar dan bergeser ke arah nilai yang lebih terang (kanan). Proses ini meregangkan rentang piksel yang bernilai rendah (gelap) menjadi lebih luas, sambil memampatkan rentang piksel yang bernilai tinggi (terang).
+
+
+2. Kapan transformasi logaritmik lebih bermanfaat dibanding negatif?
+
+Transformasi logaritmik jauh lebih bermanfaat ketika kita perlu memunculkan detail yang tersembunyi pada area citra yang terlalu gelap (underexposed) tanpa membuat keseluruhan gambar menjadi kacau atau merusak detail pada area yang sudah terang. Sebaliknya, transformasi negatif hanya membalikkan warna secara total (hitam jadi putih, putih jadi hitam), sehingga kurang cocok jika tujuannya adalah memperbaiki pencahayaan untuk memperjelas detail.
