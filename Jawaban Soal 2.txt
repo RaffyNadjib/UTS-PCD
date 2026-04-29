@@ -1,0 +1,20 @@
+Nama: ACHMAD RAFFY NADJIB
+NIM: 23424047
+
+1. Perbandingan Hasil Visual dan Nilai Piksel Rata-rata
+
+Citra Original: Memiliki visual gambar normal dengan rata-rata piksel sebesar [41.75]
+
+Low Pass Filter (LPF): Secara visual, efeknya membuat citra terlihat lebih redup detailnya atau blur. Nilai piksel rata-rata citra LPF adalah [41.75]. Nilai ini kurang lebih akan sama persis dengan citra original karena total bobot dari kernel LPF adalah 1(9 x 1/9), sehingga intensitas cahaya secara keseluruhan tetap dipertahankan.
+
+High Pass Filter (HPF): Secara visual, area pada citra yang memiliki warna seragam menjadi gelap (hitam), sementara area yang memiliki perbedaan intensitas tinggi (seperti garis atau batas objek) akan menyala terang untuk deteksi tepi. Nilai piksel rata-ratanya turun drastis menjadi [27.33] (mendekati 0). Hal ini terjadi karena jumlah total bobot kernel HPF adalah 0(-8 + 8 = 0), sehingga mereduksi sebagian besar intensitas gambar dasar.
+
+Band Pass Filter (BPF): Secara visual, detail pada citra terlihat lebih kontras dan batas objek semakin tegas (penajaman/sharpening). Nilai piksel rata-ratanya adalah [41.81]. Nilai rata-rata ini cenderung setara dengan citra original karena total nilai bobot matriks kernelnya juga bernilai 1(5 - 4 = 1), yang berarti ketajaman ditingkatkan tanpa mengubah tingkat kecerahan gambar secara keseluruhan.  
+
+2. Hubungan antara Domain Spasial dan Domain Frekuensi
+
+Low Pass Filter (LPF): Di dalam domain spasial, kernel ini melakukan operasi rata-rata (blur) pada sekumpulan piksel. Operasi spasial ini berbanding lurus dengan pemfilteran frekuensi di domain frekuensi, di mana filter ini memblokir sinyal frekuensi tinggi (detail tajam dan noise) dan hanya meloloskan sinyal frekuensi rendah (gradasi warna yang lambat/rata).
+
+High Pass Filter (HPF): Dalam domain spasial, kernel HPF mencari selisih ekstrem antara piksel pusat dengan piksel di sekitarnya. Pada domain frekuensi, ini berarti filter menahan sinyal frekuensi rendah (area datar dan seragam) dan meloloskan sinyal frekuensi tinggi (perubahan intensitas cahaya yang mendadak/garis tepi).
+
+Band Pass Filter (BPF): Dalam domain spasial, kernel ini melakukan sharpening dengan menonjolkan piksel pusat sekaligus memoderasi nilai piksel tetangga. Pada domain frekuensi, filter ini meloloskan rentang pita frekuensi menengah ke atas untuk mengekstrak detail tepi, lalu menambahkannya kembali ke komponen frekuensi rendah citra asli, sehingga menghasilkan gambar yang lebih tajam namun bentuk aslinya tetap utuh.
